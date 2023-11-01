@@ -4,10 +4,12 @@ import pic3 from './assets/chemsafe.jpg'
 import './App.css'
 import VideoPlayer from './VideoPlayer';
 import video from './assets/chemsafeOverview.mp4';
+import TopSection from './components/Chemsafe/TopSection';
 
 const ChemsafePage = () => {
   return (
     <>
+        <TopSection /> 
         <div className="chemsafe-container">
             <img src={pic3} alt="Responsive Image" className="chemsafe-image" />
         </div>
