@@ -5,55 +5,112 @@ import './App.css'
 import VideoPlayer from './VideoPlayer';
 import video from './assets/chemsafeOverview.mp4';
 import TopSection from './components/Chemsafe/TopSection';
+import SectionHeader from './components/Headers/SectionHeader';
+import ClientsSection from './components/Chemsafe/ClientsSection';
+import Respo from './components/Chemsafe/Respo';
+import {
+    respo1,
+    respo2,
+    respo3
+  } from './constants/Chemsafe';
+
 
 const ChemsafePage = () => {
   return (
     <>
-        <TopSection /> 
-        <div className="chemsafe-container">
-            <img src={pic3} alt="Responsive Image" className="chemsafe-image" />
+    <div style={styles.pageStyle}>   
+    <div style={styles.rowContainer}>
+        <div style={styles.colContainer}>
+            <TopSection />
         </div>
-
-        <div className="chemsafe-container">
-            <h1 className="chemsafe-text">Database for Safety Characteristics in Explosion Protection</h1>
+      </div>  
+      <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+        <SectionHeader title="Users" />
         </div>
-        
-        <ul style={listStyle}>
-            <li style={listItemStyle}>
-                I took over the complete project and was responsible for the design and communication wth non-technical stakeholders
-            </li>
-            <li>
-                I optimized the Database CHEMSAFE
-            </li>
-            <ul style={listStyle}>
-                <li style={listItemStyle}>
-                    dramatically improved the schema
-                </li>
-                <li style={listItemStyle}>
-                    eliminated data duplication and redundancies
-                </li>
-            </ul>
-                <li style={listItemStyle}>
-                    Developed and designed both the backend and frontend of the current online version of CHEMSAFE.
-                </li>
-                <ul style={listStyle}>
-                <li style={listItemStyle}>
-                    I went online with the new version of Chemsafe in June 2022,since then the user adoption increased by over 400%.
-                </li>
-                </ul>
-                <li style={listItemStyle}>
-                    Here is a short video how Chemsafe works and te search opions that are available 
-                </li>
-            </ul>
-        
-        <div className="chemsafe-container">
+      </div>  
+      <div style={styles.rowContainer}>
+        <div style={styles.colContainer}>
+            <ClientsSection />
+        </div>
+      </div>
+      <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+            <SectionHeader title="Responsibilities" />
+        </div>
+      </div> 
+      <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+            <Respo title={respo1}  />
+            <Respo title={"I optimized the Database CHEMSAFE"}  />
+            <Respo title={respo2}  />
+            <Respo title={respo3}  />
+        </div>
+      </div> 
+      <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+            <SectionHeader title="Chemsafe" />
+        </div>
+      </div> 
+      <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'2.5%',marginBottom:'20px'}}>
+            <span style={styles.regTextStyle}>
+                Here is a short video how Chemsafe works and te search opions that are available 
+            </span>
+            
+        </div>
+      </div> 
+    
+        <div style={{width: '70%',marginBottom : '20px'}}>
 
             <VideoPlayer videoSrc={video} />
         </div>
-    
+    </div>
     </>
       
   );
+}
+const styles ={
+    pageStyle: {
+        backgroundColor: 'black', // Set the background color to black
+        color: '#d3d3d3', // Set the text color to white
+        minHeight: '100vh', // Make sure the page covers the entire viewport height
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      },
+      rowContainer:{
+    display: 'flex',
+    justifyContent: 'left',
+    alignItems: 'center',
+    textAlign: 'left',
+    flexDirection: 'row',
+    width: '90%', // Set the width to 50% of the page width
+    marginLeft: '0', // Align the container to the left bound
+  },
+  colContainer: {
+    display: 'block',
+    justifyContent: 'center', // Center horizontally
+    alignItems: 'center', // Center vertically
+    textAlign: 'left',
+    marginLeft: '5%', // Align the container to the left bound
+    paddingTop:'3%',
+    width: '100%',
+
+  },
+  regTextStyle:{
+    textAlign: 'left',
+    fontFamily: 'Plus Jakarta Sans, sans-serif',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    fontSize: '20px',
+    color: '#bababa',
+    letterSpacing: '0.1px',
+    //color: '#d3d3d3', // Replace with the desired text color
+    marginLeft: '40px',
+    paddingTop: '20px', // Add top padding of 20px
+    
+  },
 }
 
 const listStyle = {

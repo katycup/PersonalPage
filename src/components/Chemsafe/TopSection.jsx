@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Line from '../../LineAcrossPage';
-/* import {
-    Gymnastics
-  } from '../../constants/PersonalConstants';
- */
+import {
+    Chemsafe
+  } from '../../constants/Chemsafe';
+
 const TopSection = () => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -37,8 +37,14 @@ const TopSection = () => {
             
             
             <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px' }}>
-                 bl bla bla 
-                </span>
+                Database for Safety Characteristics in Explosion Protection
+                <br/>
+                
+            </span>
+            <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '24px' }}>
+                <br/>
+                {Chemsafe}
+            </span>
             
         </>
     )
