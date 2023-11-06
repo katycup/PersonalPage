@@ -9,12 +9,12 @@ import './App.css'
 import { Story, Achiv1, Achiv2, Achiv3, sphere1 } from './constants/Automation';
 import Respo from './components/Chemsafe/Respo';
 import SectionHeader from './components/Headers/SectionHeader';
-import Flames from './components/Automation/Flames';
+//import Flames from './components/Automation/Flames';
 
 const Sphere = () => {
-    const [showFlames, setShowFlames] = useState(true);
+    //const [showFlames, setShowFlames] = useState(true);
 
-    useEffect(() => {
+    /* useEffect(() => {
       const timeout = setTimeout(() => {
         setShowFlames(false);
       }, 3000); // Hide flames after 3 seconds
@@ -22,11 +22,11 @@ const Sphere = () => {
       return () => {
         clearTimeout(timeout);
       };
-    }, []);
+    }, []); */
 
   return (
     <>
-     {showFlames && <Flames />}
+     {/* {showFlames && <Flames />} */}
     <div style={styles.pageStyle}>  
         <div style={styles.rowContainer}>
             <div style={styles.colContainer}>

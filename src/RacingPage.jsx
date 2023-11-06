@@ -1,11 +1,13 @@
 import React from 'react';
-import ImageSlideshow from './ImageSlideshow';
+import ImageSlideshow from './components/Headers/ImageSlideshow';
 import interface1 from './assets/racing/interface.png'
 import team from './assets/racing/Team.jpg'
 import car from './assets/racing/car.png'
 import vector1 from './assets/racing/vector.png'
-import wob from './assets/Logo-schwarz-transparent.jpg'
-
+import TopSection from './components/Racing/TopSection';
+import SectionHeader from './components/Headers/SectionHeader';
+import Respo from './components/Chemsafe/Respo';
+import { respo1, respo2, respo3 } from './constants/Racing';
 //import viteLogo from '/vite.svg'
 //import './App.css'
 
@@ -21,20 +23,89 @@ const RacingPage = () => {
 
   return (
     <>
-
-        <div className="sphere-container">
-            <img src={wob} alt="Responsive Image" className="sphere-image" />
+    <div style={styles.pageStyle}>  
+        <div style={styles.rowContainer}>
+            <div style={styles.colContainer}>
+                <TopSection/> 
+            </div>
         </div>
-        <h1 style={textstyle}>Driver Interface Development and Design</h1>
-        <div className="sphere-container">
-            <ImageSlideshow images={images} />
+        
+        <div style={styles.ImgaeContainer}>
+        
         </div>
-       
+        
+        <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+            <SectionHeader title="Responsibilities" />
+        </div>
+      </div> 
+      <div style={styles.rowContainer}>
+        <div style={{...styles.colContainer, marginLeft:'5%',}}>
+            <Respo title={respo1}  />
+            <Respo title={respo3}  />
+            <Respo title={respo2}  />
+            <br />
+            <br />
+        </div>
+      </div> 
+      <ImageSlideshow images={images} />
+       </div>
     </>
       
   );
 
 };
+
+const styles ={
+  pageStyle: {
+      backgroundColor: 'black', // Set the background color to black
+      color: '#d3d3d3', // Set the text color to white
+      minHeight: '100vh', // Make sure the page covers the entire viewport height
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    rowContainer:{
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'left',
+  flexDirection: 'row',
+  width: '90%', // Set the width to 50% of the page width
+  marginLeft: '0', // Align the container to the left bound
+},
+colContainer: {
+  display: 'block',
+  justifyContent: 'center', // Center horizontally
+  alignItems: 'center', // Center vertically
+  textAlign: 'left',
+  marginLeft: '5%', // Align the container to the left bound
+  paddingTop:'3%',
+  width: '100%',
+
+},
+regTextStyle:{
+  textAlign: 'left',
+  fontFamily: 'Plus Jakarta Sans, sans-serif',
+  fontStyle: 'normal',
+  fontWeight: 400,
+  fontSize: '20px',
+  color: '#bababa',
+  letterSpacing: '0.1px',
+  //color: '#d3d3d3', // Replace with the desired text color
+  marginLeft: '40px',
+  paddingTop: '20px', // Add top padding of 20px
+  
+},
+ImgaeContainer:{
+  justifyContent: 'center', // Center horizontally
+  alignItems: 'center', // Center vertically
+  width:'50%',
+  height:'40%'
+}
+}
+
 const textstyle = {
     color: "black",
     padding: "10px",

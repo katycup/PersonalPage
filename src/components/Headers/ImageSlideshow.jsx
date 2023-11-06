@@ -5,7 +5,7 @@ const ImageSlideshow = ({ images }) => {
   const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
   const containerStyle = {
-    width: '400px', // Specify your desired fixed width for the container
+    width: '50%', // Specify your desired fixed width for the container
     height: `${imageDimensions.height}px`, // Set the container height based on the image's height
     position: 'relative',
     overflow: 'hidden',

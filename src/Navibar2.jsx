@@ -71,7 +71,7 @@ export default function Navibar2() {
             </DropdownItem>
             <DropdownItem>
               <Link href="/master">
-                <span style={{ color: 'lightgrey' }}>Master Thesis</span>
+                <span style={{ color: 'lightgrey',backgroundColor: 'black' }}>Master Thesis</span>
               </Link>
             </DropdownItem>
           </DropdownMenu>

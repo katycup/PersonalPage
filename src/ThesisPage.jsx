@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageSlideshow from './ImageSlideshow';
+import ImageSlideshow from './components/Headers/ImageSlideshow';
 import plux from './assets/master/plux3.jpeg';
 import wheel from './assets/master/steeringwheel.jpg';
 import car from './assets/master/testVwehicle.jpeg';
