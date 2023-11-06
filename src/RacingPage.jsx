@@ -25,14 +25,12 @@ const RacingPage = () => {
     <>
     <div style={styles.pageStyle}>  
         <div style={styles.rowContainer}>
-            <div style={styles.colContainer}>
+            <div style={{...styles.colContainer,marginBottom: '30px'}}>
                 <TopSection/> 
             </div>
         </div>
         
-        <div style={styles.ImgaeContainer}>
-        
-        </div>
+        <ImageSlideshow images={images} />
         
         <div style={styles.rowContainer}>
         <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
@@ -48,7 +46,7 @@ const RacingPage = () => {
             <br />
         </div>
       </div> 
-      <ImageSlideshow images={images} />
+      
        </div>
     </>
       

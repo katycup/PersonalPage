@@ -4,10 +4,9 @@ import plux from './assets/master/plux3.jpeg';
 import wheel from './assets/master/steeringwheel.jpg';
 import car from './assets/master/testVwehicle.jpeg';
 import trunk from './assets/master/trunk.jpg';
-import tubs from './assets/tubs.png';
-import plri from './assets/plri.png';
-
-
+import SectionHeader from './components/Headers/SectionHeader';
+import TopSection from './components/Thesis/TopSection';
+import MasterSteps from './components/Thesis/MasterSteps';
 const ThesisPage= () => {
 
     const images = [
@@ -20,35 +19,81 @@ const ThesisPage= () => {
 
   return (
     <>
-        <div style={imageContainer}>
-          <img src={tubs} alt="Responsive Image" style={responsiveImage2} />
-          <img src={plri} alt="Responsive Image" style={responsiveImage2}  />
-            
-        </div>
-        <div className="chemsafe-container">
-            <h1 className="chemsafe-text">Validation of biomedical signal recordings</h1>
-        </div>
-
-        <div className="sphere-container">
-            <ImageSlideshow images={images} />
-        </div>
+      <div style={styles.pageStyle}>
+      <div style={styles.rowContainer}>
+          <div style={{...styles.colContainer, marginBottom: '20px'}}>
+              <TopSection/> 
+          </div>
+      </div>
+      <ImageSlideshow images={images} />
+      <div style={styles.rowContainer}>
+          <div style={{...styles.colContainer, marginBottom: '5px'}}>
+              <SectionHeader title={"Steps to solve the Problem"}/> 
+          </div>
+      </div>
+      <div style={styles.rowContainer}>
+          <div style={{...styles.colContainer, marginBottom: '20px',paddingTop: '0px'}}>
+              <MasterSteps/> 
+          </div>
+      </div>
+      
+      
+        
+      </div>
        
-
-        <div className="chemsafe-container">
-            <h1 className="chemsafe-text2">Here is an example how my website Chemsafe looks like</h1>
-        </div>
     </>
       
   );
 }
-const textStyle={
-    marginLeft: '30px',
-    whiteSpace: 'nowrap',
-    paddingTop: "10px",
-    fontFamily: "Arial",
-    fontSize: '26px', // Add text size
-    whiteSpace: 'pre-line',
-  }
+const styles ={
+  pageStyle: {
+      backgroundColor: 'black', // Set the background color to black
+      color: '#d3d3d3', // Set the text color to white
+      minHeight: '100vh', // Make sure the page covers the entire viewport height
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    rowContainer:{
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  textAlign: 'left',
+  flexDirection: 'row',
+  width: '90%', // Set the width to 50% of the page width
+  marginLeft: '0', // Align the container to the left bound
+},
+colContainer: {
+  display: 'block',
+  justifyContent: 'center', // Center horizontally
+  alignItems: 'center', // Center vertically
+  textAlign: 'left',
+  marginLeft: '5%', // Align the container to the left bound
+  paddingTop:'3%',
+  width: '100%',
+
+},
+regTextStyle:{
+  textAlign: 'left',
+  fontFamily: 'Plus Jakarta Sans, sans-serif',
+  fontStyle: 'normal',
+  fontWeight: 400,
+  fontSize: '20px',
+  color: '#bababa',
+  letterSpacing: '0.1px',
+  //color: '#d3d3d3', // Replace with the desired text color
+  marginLeft: '40px',
+  paddingTop: '20px', // Add top padding of 20px
+  
+},
+ImgaeContainer:{
+  justifyContent: 'center', // Center horizontally
+  alignItems: 'center', // Center vertically
+  width:'50%',
+  height:'40%'
+}
+};
 const imageContainer = {
     marginLeft: '10px',
     display: "flex", /* Use flexbox for centering */
