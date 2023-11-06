@@ -1,0 +1,19 @@
+/* Flames.css */
+.flames {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: url('path-to-your-flames-image.png');
+    background-size: cover;
+    animation: flamesAnimation 3s linear;
+  }
+  
+  @keyframes flamesAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
