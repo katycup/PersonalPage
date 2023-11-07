@@ -39,6 +39,7 @@ const ChemsafePage = () => {
         transform: translateX(0);
       }
     }
+    
   `;
   useEffect(() => {
     const respoObserver = new IntersectionObserver(
@@ -53,6 +54,10 @@ const ChemsafePage = () => {
         threshold: 0.2,
       }
     );
+
+    if (respoContainerRef.current) {
+      respoObserver.observe(respoContainerRef.current);
+    }
     const chemObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -66,17 +71,13 @@ const ChemsafePage = () => {
       }
     );
 
-    
-
-    if (respoContainerRef.current) {
-      respoObserver.observe(respoContainerRef.current);
-    }
+  
     if (chemContainerRef.current) {
       chemObserver.observe(chemContainerRef.current);
     }
-
-  
   }, []);
+
+
   return (
     <>
     <div style={styles.pageStyle}>   
@@ -126,13 +127,12 @@ const ChemsafePage = () => {
             </span>
             
         </div>
-      </div> 
+        </div> 
     
         <div style={{width: '70%',marginBottom : '20px', marginLeft: '10%'}}>
-
             <VideoPlayer videoSrc={video} />
         </div>
-        </div>
+      </div>
     </div>
     </>
       
