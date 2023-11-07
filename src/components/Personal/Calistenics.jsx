@@ -45,12 +45,12 @@ const Calisthenics = () => {
       <span style={{ ...styles.regTextStyle, ...flyInStyle }}>
         Calisthenics
       </span>
-      <div style={{ marginLeft: '-3%' }}>
+      <div style={{ marginLeft: '-3%', marginBottom:'30px'}}>
         <Line />
       </div>
 
-      <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px' }}>
-        During the COVID-19 pandemic, I discovered freestyle calisthenics and dedicated a year to training outdoors in all seasons due to gym closures. In 2021, I participated in my first international calisthenics competition and proudly secured a 3rd-place finish.
+      <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px', marginTop: '20px',marginBottom: '20px' }}>
+        During the COVID-19 pandemic, I discovered freestyle calisthenics and trained outdoors in all seasons due to gym closures. In 2021, I participated in my first international calisthenics competition and proudly secured the 3rd-place.
       </span>
       <VideoPlayer2 videoSources={videoSources} onPlay={customPlayLogic} onSwitch={customSwitchLogic} />
     </>

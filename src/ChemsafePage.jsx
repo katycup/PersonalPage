@@ -42,7 +42,6 @@ const ChemsafePage = () => {
       <div style={styles.rowContainer}>
         <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
             <Respo title={respo1}  />
-            <Respo title={"I optimized the Database CHEMSAFE"}  />
             <Respo title={respo2}  />
             <Respo title={respo3}  />
         </div>

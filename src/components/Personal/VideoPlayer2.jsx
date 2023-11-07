@@ -25,6 +25,7 @@ const VideoPlayer2 = ({ videoSources, onPlay, onSwitch }) => {
     // Load and play the video
     videoElement.load();
     videoElement.play();
+    videoElement.muted = true; 
     onPlay(); // Call the onPlay function when playing the video
   }, [currentVideoIndex, videoSources, onPlay, onSwitch]);
 
@@ -57,6 +58,7 @@ const VideoPlayer2 = ({ videoSources, onPlay, onSwitch }) => {
         style={{
           width: '100%', // Set video width to 100% of the container width
           height: '100%', // Set video height to 100% of the container height
+          marginTop: '30px',
         }}
         controls
         autoPlay

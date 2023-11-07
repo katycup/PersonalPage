@@ -4,11 +4,7 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
+  Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button,
 } from '@nextui-org/react';
 import pic2 from './assets/chemsafe.gif';
 
@@ -31,6 +27,13 @@ const dropdownMenuStyle = {
 };
 
 export default function Navibar2() {
+  const [selectedKeys, setSelectedKeys] = React.useState(new Set(["text"]));
+
+  const selectedValue = React.useMemo(
+    () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
+    [selectedKeys]
+  );
+
   return (
     <Navbar  style={{paddingTop:'0px'}}>
       <NavbarContent style={{position: 'fixed', backgroundColor: 'black', width:'100%', marginTop:'-3px',fontSize: '24px'}} >
@@ -44,39 +47,43 @@ export default function Navibar2() {
             Me
           </Link>
         </NavbarItem>
-        <Dropdown>
-          <DropdownTrigger>
+        <Dropdown style={{ backgroundColor: 'black', borderRadius: '5%',fontSize: '24px' }}>
+          <DropdownTrigger style={{ backgroundColor: 'black' }}>
             <Button variant="bordered">Projects</Button>
           </DropdownTrigger>
-          <DropdownMenu aria-label="Static Actions" style={{ backgroundColor: 'black' }}>
+          <DropdownMenu aria-label="Static Actions" >
             <DropdownItem>
               <Link href="/chemsafe">
-                <span style={{ color: 'lightgrey',backgroundColor: 'black' }}>Chemsafe</span>
+                <span style={{ color: 'lightgrey' }}>Chemsafe</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
               <Link href="/sphere">
-                <span style={{ color: 'lightgrey',backgroundColor: 'black' }}>Automation</span>
+                <span style={{ color: 'lightgrey' }}>Automation</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
               <Link href="/wobracing">
-                <span style={{ color: 'lightgrey',backgroundColor: 'black' }}>wob-racing</span>
+                <span style={{ color: 'lightgrey' }}>wob-racing</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
               <Link href="/homeoffice">
-                <span style={{ color: 'lightgrey',backgroundColor: 'black' }}>Home-Office Study</span>
+                <span style={{ color: 'lightgrey' }}>Home-Office Study</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
               <Link href="/master">
-                <span style={{ color: 'lightgrey',backgroundColor: 'black' }}>Master Thesis</span>
+                <span style={{ color: 'lightgrey' }}>Master Thesis</span>
               </Link>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
+
+    
+
       </NavbarContent>
     </Navbar>
+    
   );
 }
