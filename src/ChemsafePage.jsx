@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import pic3 from './assets/chemsafe.jpg'
 //import viteLogo from '/vite.svg'
 import './App.css'
@@ -16,6 +16,67 @@ import {
 
 
 const ChemsafePage = () => {
+  const respoContainerRef = useRef(null);
+  const [respoVisible, setRespoVisible] = useState(false);
+
+  const chemContainerRef = useRef(null);
+  const [chemVisible, setChemVisible] = useState(false);
+
+  const flyInStyle ={
+    animation: 'flyInFromLeft 1s ease-in-out',
+  };
+
+  const flyInStyle2 ={
+    animation: 'flyInFromLeft 1s ease-in-out',
+  };
+
+  const keyframes = `
+    @keyframes flyInFromLeft {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  `;
+  useEffect(() => {
+    const respoObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setRespoVisible(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+    const chemObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setChemVisible(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    
+
+    if (respoContainerRef.current) {
+      respoObserver.observe(respoContainerRef.current);
+    }
+    if (chemContainerRef.current) {
+      chemObserver.observe(chemContainerRef.current);
+    }
+
+  
+  }, []);
   return (
     <>
     <div style={styles.pageStyle}>   
@@ -34,18 +95,25 @@ const ChemsafePage = () => {
             <ClientsSection />
         </div>
       </div>
-      <div style={styles.rowContainer}>
-        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
-            <SectionHeader title="Responsibilities" />
-        </div>
+
+      <div ref={respoContainerRef} style={respoVisible ? { ...flyInStyle } : { ...flyInStyle, opacity: 0 }}>
+      <style>{respoVisible ? keyframes : ''}</style>
+        <div style={styles.rowContainer}>
+          <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+              <SectionHeader title="Responsibilities" />
+          </div>
+        </div> 
+        <div style={styles.rowContainer}>
+          <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+              <Respo title={respo1}  />
+              <Respo title={respo2}  />
+              <Respo title={respo3}  />
+          </div>
+        </div> 
       </div> 
-      <div style={styles.rowContainer}>
-        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
-            <Respo title={respo1}  />
-            <Respo title={respo2}  />
-            <Respo title={respo3}  />
-        </div>
-      </div> 
+
+      <div ref={chemContainerRef} style={chemVisible ? { ...flyInStyle2 } : { ...flyInStyle2, opacity: 0 }}>
+      <style>{chemVisible ? keyframes : ''}</style>
       <div style={styles.rowContainer}>
         <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
             <SectionHeader title="Chemsafe" />
@@ -60,9 +128,10 @@ const ChemsafePage = () => {
         </div>
       </div> 
     
-        <div style={{width: '70%',marginBottom : '20px'}}>
+        <div style={{width: '70%',marginBottom : '20px', marginLeft: '10%'}}>
 
             <VideoPlayer videoSrc={video} />
+        </div>
         </div>
     </div>
     </>

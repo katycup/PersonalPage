@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ImageSlideshow from './components/Headers/ImageSlideshow';
 import interface1 from './assets/racing/interface.png'
 import team from './assets/racing/Team.jpg'
@@ -13,6 +13,24 @@ import { respo1, respo2, respo3 } from './constants/Racing';
 
 
 const RacingPage = () => {
+  const respoContainerRef = useRef(null);
+  const [respoVisible, setRespoVisible] = useState(false);
+
+  const flyInStyle ={
+    animation: 'flyInFromLeft 1s ease-in-out',
+  };
+
+  const keyframes = `
+    @keyframes flyInFromLeft {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  `;
+  
     const images = [
         interface1,
         car,
@@ -20,7 +38,29 @@ const RacingPage = () => {
         vector1,
         // Add more image URLs as needed
       ];
-
+      useEffect(() => {
+        const respoObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setRespoVisible(true);
+            }
+          },
+          {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2,
+          }
+        );
+    
+        
+    
+        if (respoContainerRef.current) {
+          respoObserver.observe(respoContainerRef.current);
+        }
+    
+      
+      }, []);
+      
   return (
     <>
     <div style={styles.pageStyle}>  
@@ -31,7 +71,9 @@ const RacingPage = () => {
         </div>
         
         <ImageSlideshow images={images} />
-        
+        <div ref={respoContainerRef} style={respoVisible ? { ...flyInStyle } : { ...flyInStyle, opacity: 0 }}>
+        <style>{respoVisible ? keyframes : ''}</style>
+
         <div style={styles.rowContainer}>
         <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
             <SectionHeader title="Responsibilities" />
@@ -46,7 +88,7 @@ const RacingPage = () => {
             <br />
         </div>
       </div> 
-      
+      </div>
        </div>
     </>
       

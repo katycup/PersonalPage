@@ -38,7 +38,7 @@ export default function Navibar2() {
     <Navbar  style={{paddingTop:'0px'}}>
       <NavbarContent style={{position: 'fixed', backgroundColor: 'black', width:'100%', marginTop:'-3px',fontSize: '24px'}} >
         <NavbarItem style={inlineBlockStyle}>
-          <Link style={{ color: 'lightgrey' }} href="/home2">
+          <Link style={{ color: 'lightgrey' }} href="/home">
             Home
           </Link>
         </NavbarItem>

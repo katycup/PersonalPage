@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ImageSlideshow from './components/Headers/ImageSlideshow';
 import plux from './assets/master/plux3.jpeg';
 import wheel from './assets/master/steeringwheel.jpg';
@@ -7,8 +7,25 @@ import trunk from './assets/master/trunk.jpg';
 import SectionHeader from './components/Headers/SectionHeader';
 import TopSection from './components/Thesis/TopSection';
 import MasterSteps from './components/Thesis/MasterSteps';
-const ThesisPage= () => {
 
+const ThesisPage= () => {
+  const respoContainerRef = useRef(null);
+  const [respoVisible, setRespoVisible] = useState(false);
+
+  const flyInStyle ={
+    animation: 'flyInFromLeft 1s ease-in-out',
+  };
+
+  const keyframes = `
+    @keyframes flyInFromLeft {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  `;
     const images = [
         plux,
         car,
@@ -17,6 +34,28 @@ const ThesisPage= () => {
         // Add more image URLs as needed
       ];
 
+      useEffect(() => {
+        const respoObserver = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setRespoVisible(true);
+            }
+          },
+          {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2,
+          }
+        );
+    
+        
+    
+        if (respoContainerRef.current) {
+          respoObserver.observe(respoContainerRef.current);
+        }
+    
+      
+      }, []);
   return (
     <>
       <div style={styles.pageStyle}>
@@ -26,17 +65,22 @@ const ThesisPage= () => {
           </div>
       </div>
       <ImageSlideshow images={images} />
-      <div style={styles.rowContainer}>
+      
+
+      <div ref={respoContainerRef} style={respoVisible ? { ...flyInStyle } : { ...flyInStyle, opacity: 0 }}>
+        <style>{respoVisible ? keyframes : ''}</style>
+        <div style={styles.rowContainer}>
           <div style={{...styles.colContainer, marginBottom: '5px'}}>
               <SectionHeader title={"Steps to solve the Problem"}/> 
           </div>
-      </div>
-      <div style={styles.rowContainer}>
+        </div>
+        <div style={styles.rowContainer}>
           <div style={{...styles.colContainer, marginBottom: '20px',paddingTop: '0px'}}>
               <MasterSteps/> 
           </div>
       </div>
       
+      </div>
       
         
       </div>
