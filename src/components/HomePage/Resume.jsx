@@ -106,7 +106,7 @@ const Resume = () => {
           <div style={styles.colContainer}>
             <SectionContent title={CompanyName} time="2019-2023" subtitle={Roles} imageSrc={work} />
           </div>
-          <div style={styles.colContainer2}>
+          <div style={{...styles.colContainer2, marginTop: '40px'}}>
             <span style={styles.regTextStyle2}>{ProfessionalExperience}</span>
           </div>
         </div>
