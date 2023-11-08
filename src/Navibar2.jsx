@@ -38,50 +38,48 @@ export default function Navibar2() {
     <Navbar  style={{paddingTop:'0px'}}>
       <NavbarContent style={{position: 'fixed', backgroundColor: 'black', width:'100%', marginTop:'-3px',fontSize: '24px'}} >
         <NavbarItem style={inlineBlockStyle}>
-          <Link style={{ color: 'lightgrey' }} href="/home">
+          <Link style={{ color: 'lightgrey' }} href="/">
             Home
           </Link>
         </NavbarItem>
         <NavbarItem style={inlineBlockStyle}>
-          <Link style={{ color: 'lightgrey' }} href="/gym">
+          <Link style={{ color: 'lightgrey' }} href="#/gym">
             Me
           </Link>
         </NavbarItem>
+        
         <Dropdown style={{ backgroundColor: 'black', borderRadius: '5%',fontSize: '24px' }}>
           <DropdownTrigger style={{ backgroundColor: 'black' }}>
             <Button variant="bordered">Projects</Button>
           </DropdownTrigger>
           <DropdownMenu aria-label="Static Actions" >
             <DropdownItem>
-              <Link href="/chemsafe">
+              <Link href="#/chemsafe">
                 <span style={{ color: 'lightgrey' }}>Chemsafe</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href="/sphere">
+              <Link href="#/sphere">
                 <span style={{ color: 'lightgrey' }}>Automation</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href="/wobracing">
+              <Link href="#/wobracing">
                 <span style={{ color: 'lightgrey' }}>wob-racing</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href="/homeoffice">
+              <Link href="#/homeoffice">
                 <span style={{ color: 'lightgrey' }}>Home-Office Study</span>
               </Link>
             </DropdownItem>
             <DropdownItem>
-              <Link href="/master">
+              <Link href="#/master">
                 <span style={{ color: 'lightgrey' }}>Master Thesis</span>
               </Link>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-
-    
-
       </NavbarContent>
     </Navbar>
     

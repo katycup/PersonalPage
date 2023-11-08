@@ -1,8 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route,Routes} from 'react-router-dom';
+import { HashRouter as Router, Route,Routes} from 'react-router-dom';
 import pic from './assets/me.jpg'
-//import viteLogo from '/vite.svg'
-//import './App.css'
 import  Navibar  from "./Navibar2"
 
 import ChemsafePage from './ChemsafePage';
@@ -23,21 +21,17 @@ const App = () => {
           <Navibar />
         </div>
         <Routes>
-          <Route path="/gym" element={<GymPage />} />
-          {/* <Route path="/home" element={<HomePage />} /> */}
-          <Route path="/home" element={<HomePage2 />} index />
-          <Route path="/chemsafe" element={<ChemsafePage />} />
-          <Route path="/sphere" element={<Sphere />} />
-          <Route path="/wobracing" element={<RacingPage />} />
-          <Route path="/homeoffice" element={<StudyPage />} />
-          <Route path="/master" element={<ThesisPage />} />
-          <Route path="/data" element={<DataPage />} />
+          <Route exact path="/gym" element={<GymPage />} />
+          <Route exact path="/chemsafe" element={<ChemsafePage />} />
+          <Route exact path="/sphere" element={<Sphere />} />
+          <Route exact path="/wobracing" element={<RacingPage />} />
+          <Route exact path="/homeoffice" element={<StudyPage />} />
+          <Route exact path="/master" element={<ThesisPage />} />
+          <Route exact path="/data" element={<DataPage />} />
+          <Route exact path="/" element={<HomePage2 />} />
         </Routes>
       </div>
-
     </Router>
-      
-      
     </>
   )
 };
