@@ -114,7 +114,7 @@ const HomePage2 = () => {
         <div id="text-container" style={textContainerStyles}>
           <span style={styles.additionalTextStyle}>{Headliner}</span>
           <br />
-          <a href="./KatharinaDitler.pdf" style={styles.linkStyles} download>
+          <a href="./public/KatharinaDitler.pdf" style={styles.linkStyles} download>
             Download Resume &nbsp; &nbsp; &nbsp; &#x2192; {/* Right-pointing arrow character */}
           </a>
 
