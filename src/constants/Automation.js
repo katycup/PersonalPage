@@ -11,4 +11,4 @@ export const Achiv2 =`To this day over 500 successful explosions and measurement
 
 export const Achiv3 =`Multiple Papers were published and a norm is in the process of being approved.`;
 
-export const sphere1= `This exact experimental setup is used by four Grman companies among them the Physikalisch-Technische Bundesanstalt (PTB), as well as laboratories from Australia, Belgium, Czech Republic, France, Poland and P.R. China. Among all companies and institutions, we had the only fully automated experimental setup. The results will have an impact on the new standard and may lead to robust data for later simulation purposes.`;
+export const sphere1= `This exact experimental setup is used by four German companies among them the Physikalisch-Technische Bundesanstalt (PTB), as well as laboratories from Australia, Belgium, Czech Republic, France, Poland and P.R. China. Among all companies and institutions, we had the only fully automated experimental setup. The results will have an impact on the new standard and may lead to robust data for later simulation purposes.`;
