@@ -41,7 +41,7 @@ const TopSection = () => {
             
             <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px' }}>
                 Technical University Braunschweig &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="./public/dailyActivities.pdf" style={styles.linkStyles} download>
+                <a href="./dailyActivities.pdf" style={styles.linkStyles} download>
             Download Paper &nbsp; &nbsp; &nbsp; &#x2192; {/* Right-pointing arrow character */}
           </a>
              <br/>
