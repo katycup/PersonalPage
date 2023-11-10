@@ -1,6 +1,6 @@
 {
-  "homepage": "https://katycup.github.io/PersonalPage",
-  "name": "resumepagekatharinaditler",
+  "homepage": "https://katharina-ditler.com",
+  "name": "personalpage",
   "private": true,
   "version": "0.0.2",
   "type": "module",
@@ -11,7 +11,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview "
   },
   "dependencies": {
     "@nextui-org/react": "^2.1.13",
