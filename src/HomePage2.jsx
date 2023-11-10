@@ -3,8 +3,7 @@ import pic from './assets/me2.png';
 import linkedin from './assets/linkedin.png'
 
 import './App.css'
-import Line from './LineAcrossPage';
-import Line2 from './ThinnerLineAcross';
+
 
 import { Jobs, Headliner} from './constants/ExperienceConstants';
 import Resume from './components/HomePage/Resume';
@@ -59,6 +58,10 @@ const HomePage2 = () => {
     transform: showTextContainer ? 'translateX(0)' : 'translateX(100%)', // Initially hidden and gradually shown
     transition: 'transform 1s ease-in-out, opacity 1s ease-in', // Add smooth transitions for transform and opacity
     opacity: showTextContainer ? 1 : 0,
+    '@media (max-width: 768px)': {
+      width: '100%', // Adjust width for smaller screens
+      // Add more responsive styles if needed
+    },
   };
 
   const imageContainerStyles = {
@@ -70,6 +73,10 @@ const HomePage2 = () => {
     transform: showImageContainer ? 'translateX(0)' : 'translateX(100%)', // Initially hidden and gradually shown
     transition: 'transform 1s ease-in-out, opacity 1s ease-in', // Add smooth transitions for transform and opacity
     opacity: showImageContainer ? 1 : 0,
+    '@media (max-width: 768px)': {
+      flexDirection: 'column', // Stack image on top of text on smaller screens
+      // Add more responsive styles if needed
+    },
   };
 
   const gradientOverlay = {
@@ -94,6 +101,10 @@ const HomePage2 = () => {
     padding: '20px',
     opacity: showName ? 1 : 0, // Initially hidden (opacity: 0) and gradually shown (opacity: 1)
     transition: 'opacity 1s ease-in-out', // Add a smooth transition effect
+    '@media (max-width: 768px)': {
+      fontSize: '40px', // Adjust font size for smaller screens
+      // Add more responsive styles if needed
+    },
   };
 
 
@@ -127,7 +138,10 @@ const HomePage2 = () => {
       </div>
 
       <Resume />
+      <div style={styles.mediaStyle}>
       <Technical/>
+      </div>
+      
       <Contact/>
     </div>
    
@@ -150,6 +164,7 @@ const styles = {
     display: 'block',
     borderRadius: '5%',
     overflow: 'hidden',
+    
   },
 
   paragraphStyles :{
@@ -161,6 +176,16 @@ const styles = {
     fontSize: '28px',
     letterSpacing: '0.1px',
     //margin: '20px', // Add margin for spacing
+    '@media (max-width: 768px)': {
+      fontSize: '18px', // Adjust font size for smaller screens
+      // Add more responsive styles if needed
+    },
+  },
+  mediaStyle: {
+    '@media (max-width: 768px)': {
+      fontSize: '18px', // Adjust font size for smaller screens
+      // Add more responsive styles if needed
+    },
   },
   additionalTextStyle: {
     fontFamily: 'Plus Jakarta Sans, sans-serif',
@@ -180,6 +205,9 @@ const styles = {
     color: 'black',
     textDecoration: 'none',
     borderRadius: '5px',
+    '@media (max-width: 768px)': {
+      padding: '8px 16px', 
+    },
   },
 };
 
