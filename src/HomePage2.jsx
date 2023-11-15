@@ -59,11 +59,16 @@ const HomePage2 = () => {
     transition: 'transform 1s ease-in-out, opacity 1s ease-in', // Add smooth transitions for transform and opacity
     opacity: showTextContainer ? 1 : 0,
     '@media (max-width: 768px)': {
-      width: '100%', // Adjust width for smaller screens
-      // Add more responsive styles if needed
+      width: '100%',
+      alignItems: 'center',
+  
+      // New styles for smaller screens
+      flexDirection: 'row', // Display children elements in a row
+      justifyContent: 'space-between', // Add space between elements
     },
   };
 
+  
   const imageContainerStyles = {
     display: 'flex',
     justifyContent: 'center',
@@ -123,13 +128,13 @@ const HomePage2 = () => {
         </h1>
         
         <div id="text-container" style={textContainerStyles}>
+       
           <span style={styles.additionalTextStyle}>{Headliner}</span>
-          <br />
           <a href="./KatharinaDitler.pdf" style={styles.linkStyles} download>
-            Download Resume &nbsp; &nbsp; &nbsp; &#x2192; {/* Right-pointing arrow character */}
+            Download Resume &nbsp; &nbsp; &nbsp; &#x2192;
           </a>
-
-        </div>
+        
+      </div>
         
       </div>
       <div  id="image-container" style={imageContainerStyles}>
