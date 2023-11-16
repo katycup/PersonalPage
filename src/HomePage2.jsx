@@ -10,6 +10,7 @@ import Resume from './components/HomePage/Resume';
 import Technical from './components/HomePage/Technical';
 import Contact from './components/HomePage/Contact';
 
+
 const HomePage2 = () => {
   // Create a media query for screens narrower than 768px
   
@@ -48,26 +49,6 @@ const HomePage2 = () => {
   }, []);
 
   
-  const textContainerStyles = {
-    width: '30%', // Set the width to 30% of the page width
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start', // Start from the right
-    justifyContent: 'center',
-    margin: '0 auto', // Center the container horizontally
-    transform: showTextContainer ? 'translateX(0)' : 'translateX(100%)', // Initially hidden and gradually shown
-    transition: 'transform 1s ease-in-out, opacity 1s ease-in', // Add smooth transitions for transform and opacity
-    opacity: showTextContainer ? 1 : 0,
-    '@media (max-width: 768px)': {
-      width: '100%',
-      alignItems: 'center',
-  
-      // New styles for smaller screens
-      flexDirection: 'row', // Display children elements in a row
-      justifyContent: 'space-between', // Add space between elements
-    },
-  };
-
   
   const imageContainerStyles = {
     display: 'flex',
@@ -78,7 +59,7 @@ const HomePage2 = () => {
     transform: showImageContainer ? 'translateX(0)' : 'translateX(100%)', // Initially hidden and gradually shown
     transition: 'transform 1s ease-in-out, opacity 1s ease-in', // Add smooth transitions for transform and opacity
     opacity: showImageContainer ? 1 : 0,
-    '@media (max-width: 768px)': {
+    '@media (maxWidth: 768px)': {
       flexDirection: 'column', // Stack image on top of text on smaller screens
       // Add more responsive styles if needed
     },
@@ -101,25 +82,33 @@ const HomePage2 = () => {
     fontFamily: 'Plus Jakarta Sans, sans-serif',
     fontStyle: 'normal',
     fontWeight: 800,
-    fontSize: '56px',
+    
     letterSpacing: '-2.2px',
     padding: '20px',
     opacity: showName ? 1 : 0, // Initially hidden (opacity: 0) and gradually shown (opacity: 1)
     transition: 'opacity 1s ease-in-out', // Add a smooth transition effect
-    '@media (max-width: 768px)': {
-      fontSize: '40px', // Adjust font size for smaller screens
-      // Add more responsive styles if needed
-    },
+    
   };
 
-
+  const textContainerStyles = {
+    //width: '30%',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    margin: '0 auto',
+    transform: showTextContainer ? 'translateX(0)' : 'translateX(100%)',
+    transition: 'transform 1s ease-in-out, opacity 1s ease-in',
+    opacity: showTextContainer ? 1 : 0,
+    marginBottom: '20px',
+  };
  
 
   return (
     <div style={styles.pageStyle}>
       <div className="container">
     
-        <h1 style={headingStyles}>
+        <h1 id="heading" style={headingStyles}>
           <span>Katharina</span>
           <br />
           <span>Ditler</span>
@@ -133,12 +122,11 @@ const HomePage2 = () => {
           <a href="./KatharinaDitler.pdf" style={styles.linkStyles} download>
             Download Resume &nbsp; &nbsp; &nbsp; &#x2192;
           </a>
-        
       </div>
         
       </div>
       <div  id="image-container" style={imageContainerStyles}>
-        <img src={pic} alt="Responsive Image" style={styles.responsiveImageStyles} />
+        <img id="image-container" src={pic} alt="Responsive Image" style={styles.responsiveImageStyles} />
         {/* <div style={gradientOverlay}></div> */}
       </div>
 
@@ -164,7 +152,7 @@ const styles = {
   
   
   responsiveImageStyles : {
-    maxWidth: '50%',
+    
     height: 'auto',
     display: 'block',
     borderRadius: '5%',
@@ -181,13 +169,13 @@ const styles = {
     fontSize: '28px',
     letterSpacing: '0.1px',
     //margin: '20px', // Add margin for spacing
-    '@media (max-width: 768px)': {
+    '@media (maxWidth: 768px)': {
       fontSize: '18px', // Adjust font size for smaller screens
       // Add more responsive styles if needed
     },
   },
   mediaStyle: {
-    '@media (max-width: 768px)': {
+    '@media (maxWidth: 768px)': {
       fontSize: '18px', // Adjust font size for smaller screens
       // Add more responsive styles if needed
     },
@@ -210,7 +198,7 @@ const styles = {
     color: 'black',
     textDecoration: 'none',
     borderRadius: '5px',
-    '@media (max-width: 768px)': {
+    '@media (maxWidth: 768px)': {
       padding: '8px 16px', 
     },
   },

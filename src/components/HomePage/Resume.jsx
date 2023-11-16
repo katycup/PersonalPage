@@ -13,6 +13,7 @@ import {
   CompanyName,
   Roles,
 } from '../../constants/ExperienceConstants';
+import '../../App.css'
 
 const Resume = () => {
   const educationContainerRef = useRef(null);
@@ -28,7 +29,7 @@ const Resume = () => {
     fontWeight: 200,
     fontSize: '28px',
     letterSpacing: '0.1px',
-    paddingLeft: '50px',
+    
     paddingTop: '20px',
     margin: '10px',
     animation: 'flyInFromLeft 1s ease-in-out',
@@ -83,9 +84,10 @@ const Resume = () => {
 
   return (
     <>
-      <div ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
+      <div id='absatz' ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
         <style>{educationVisible ? keyframes : ''}</style>
         <SectionHeader title="Education" />
+            
         <div style={styles.rowContainer}>
           <div style={styles.colContainer}>
             <SectionContent title={MasterTitle} time="2020-2023" subtitle={MasterContent} imageSrc={hat} />
@@ -95,6 +97,7 @@ const Resume = () => {
             <span style={styles.regTextStyle2}>{EducationalExperience}</span>
           </div>
         </div>
+       
       </div>
       <div
         ref={experienceContainerRef}
@@ -102,14 +105,17 @@ const Resume = () => {
       >
         <style>{experienceVisible ? keyframes : ''}</style>
         <SectionHeader title="Professional Experience" />
+      
         <div style={styles.rowContainer}>
           <div style={styles.colContainer}>
-            <SectionContent title={CompanyName} time="2019-2023" subtitle={Roles} imageSrc={work} />
+            <SectionContent title={ CompanyName } time="2019-2023" subtitle={Roles} imageSrc={work} />
           </div>
           <div style={{...styles.colContainer2, marginTop: '40px'}}>
             <span style={styles.regTextStyle2}>{ProfessionalExperience}</span>
           </div>
         </div>
+        
+        
       </div>
     </>
   );
@@ -139,6 +145,7 @@ const styles = {
     alignItems: 'center', // Center vertically
     textAlign: 'left',
     width: '50%',
+    flexDirection: 'column',
     paddingTop: '5px',
   },
   regTextStyle2: {
@@ -148,10 +155,9 @@ const styles = {
     fontFamily: 'Plus Jakarta Sans, sans-serif',
     fontStyle: 'normal',
     fontWeight: 400,
-    fontSize: '18px',
     letterSpacing: '0.1px',
     color: '#bababa', // Replace with the desired text color
-    marginLeft: '40px',
+    fontSize: '18px',
     width: '90%',
   },
   linkStyle: {
