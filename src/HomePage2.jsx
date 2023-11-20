@@ -6,14 +6,31 @@ import './App.css'
 
 
 import { Jobs, Headliner} from './constants/ExperienceConstants';
-import Resume from './components/HomePage/Resume';
+import Resume from './components/HomePage/ResumeDesktop';
+import ResumeMobile from './components/HomePage/ResumeMobile';
+
 import Technical from './components/HomePage/Technical';
 import Contact from './components/HomePage/Contact';
 
 
 const HomePage2 = () => {
-  // Create a media query for screens narrower than 768px
   
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 900);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+
+     // Add event listener for window resize
+     window.addEventListener('resize', handleResize);
+
+     // Cleanup the event listener on component unmount
+     return () => {
+       window.removeEventListener('resize', handleResize);
+     };
+   }, []); // Empty dependency array ensures that the effect runs only once on mount
+ 
 
   const [showName, setShowName] = useState(false);
 
@@ -129,8 +146,11 @@ const HomePage2 = () => {
         <img id="image-container" src={pic} alt="Responsive Image" style={styles.responsiveImageStyles} />
         {/* <div style={gradientOverlay}></div> */}
       </div>
-
-      <Resume />
+      {isMobile ? (
+        < ResumeMobile/>
+      ) : (
+        <Resume />
+      )}
       <div style={styles.mediaStyle}>
       <Technical/>
       </div>

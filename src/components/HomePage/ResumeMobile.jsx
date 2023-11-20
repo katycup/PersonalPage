@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import hat from '../../assets/about/gradhat.png';
 import work from '../../assets/about/work.png';
 import SectionHeader from '../Headers/SectionHeader';
-import SectionContent from './SectionContent';
+import SectionContent from './SectionContentMobile';
 import {
   ProfessionalExperience,
   EducationalExperience,
@@ -15,7 +15,7 @@ import {
 } from '../../constants/ExperienceConstants';
 import '../../App.css'
 
-const Resume = () => {
+const ResumeMobile = () => {
   const educationContainerRef = useRef(null);
   const experienceContainerRef = useRef(null);
   const [educationVisible, setEducationVisible] = useState(false);
@@ -87,18 +87,31 @@ const Resume = () => {
       <div id='absatz' ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
         <style>{educationVisible ? keyframes : ''}</style>
         <SectionHeader title="Education" />
-            
+        <div style={styles.rowContainer}>
+           <span style={styles.regTextStyle2}> {MasterTitle} </span> 
+        </div>
         <div style={styles.rowContainer}>
           <div style={styles.colContainer}>
-            <SectionContent title={MasterTitle} time="2020-2023" subtitle={MasterContent} imageSrc={hat} />
-            <SectionContent title={BachelorTitle} time="2016-2020" subtitle={BachelorSubject} imageSrc={hat} />
-          </div>
-          <div style={styles.colContainer2}>
-            <span style={styles.regTextStyle2}>{EducationalExperience}</span>
+            <SectionContent time="2020-2023" title={MasterContent} imageSrc={hat} />
           </div>
         </div>
-       
-      </div>
+        
+        <div style={styles.rowContainer}>
+           <span style={styles.regTextStyle2}> {BachelorTitle} </span> 
+        </div>
+        <div style={styles.rowContainer}>
+          <div style={styles.colContainer}>
+            <SectionContent time="2016-2020" title={BachelorSubject} imageSrc={hat} />
+          </div>
+        </div>
+        <div style={styles.rowContainer}>
+          <div style={styles.colContainer2}>
+          <span style={styles.regTextStyle3}>{EducationalExperience}</span>
+          </div>
+        </div>
+
+        </div>
+        
       <div
         ref={experienceContainerRef}
         style={experienceVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}
@@ -107,11 +120,16 @@ const Resume = () => {
         <SectionHeader title="Professional Experience" />
       
         <div style={styles.rowContainer}>
+           <span style={styles.regTextStyle2}> {CompanyName} </span> 
+        </div>
+        <div style={styles.rowContainer}>
           <div style={styles.colContainer}>
-            <SectionContent title={ CompanyName } time="2019-2023" subtitle={Roles} imageSrc={work} />
+            <SectionContent time="2019-2023" title={Roles} imageSrc={work} />
           </div>
+        </div>
+        <div style={styles.rowContainer}>
           <div style={{...styles.colContainer2, marginTop: '40px'}}>
-            <span style={styles.regTextStyle2}>{ProfessionalExperience}</span>
+            <span style={styles.regTextStyle3}>{ProfessionalExperience}</span>
           </div>
         </div>
         
@@ -137,14 +155,14 @@ const styles = {
     alignItems: 'center',
     textAlign: 'left',
     flexDirection: 'column',
-    width: '50%',
+    width: '100%',
   },
   colContainer2: {
     display: 'flex',
     justifyContent: 'center', // Center horizontally
     alignItems: 'center', // Center vertically
     textAlign: 'left',
-    width: '50%',
+    width: '100%',
     flexDirection: 'column',
     paddingTop: '5px',
   },
@@ -157,8 +175,20 @@ const styles = {
     fontWeight: 400,
     letterSpacing: '0.1px',
     color: '#bababa', // Replace with the desired text color
-    fontSize: '18px',
-    width: '90%',
+    fontSize: '20px',
+    width: '100%',
+  },
+  regTextStyle3: {
+    textAlign: 'center',
+    justifyContent: 'center', // Center horizontally
+    alignItems: 'center', // Center vertically
+    fontFamily: 'Plus Jakarta Sans, sans-serif',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    letterSpacing: '0.1px',
+    color: '#bababa', // Replace with the desired text color
+    fontSize: '16px',
+    width: '100%',
   },
   linkStyle: {
     color: '#bababa',
@@ -166,4 +196,4 @@ const styles = {
   },
 };
 
-export default Resume;
+export default ResumeMobile;

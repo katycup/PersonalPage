@@ -10,7 +10,7 @@ const SectionContent = ({title,time, subtitle,imageSrc }) => {
           
         </div>
         <div style={styles.rowContainer}>
-        <div id='resume-text' style={styles.regTextStyle3}> 
+        <div style={styles.regTextStyle3}> 
               {time}
             </div>
 
@@ -34,8 +34,8 @@ const regTextStyle={
   textAlign: 'left',
   fontFamily: 'Plus Jakarta Sans, sans-serif',
   fontStyle: 'normal',
-  fontWeight: 400,
-  fontSize: '28px',
+  fontWeight: 300,
+  fontSize: '14px',
   letterSpacing: '0.1px',
   color: '#d3d3d3', // Replace with the desired text color
   marginLeft: '40px',
@@ -74,7 +74,8 @@ const styles = {
       fontFamily: 'Plus Jakarta Sans, sans-serif',
       fontStyle: 'normal',
       fontWeight: 400,
-      fontSize: '18px',
+      fontSize: '14px',
+      
       letterSpacing: '0.1px',
       color: '#bababa', // Replace with the desired text color
       marginRight:'20px'
