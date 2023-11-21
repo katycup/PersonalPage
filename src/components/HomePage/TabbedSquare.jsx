@@ -99,7 +99,7 @@ const TabbedSquare = () => {
             <img style={imageStyle} src={item.src} alt={item.alt} />
             {hoverText === item.hoverText && <TextOnHover>{item.hoverText}</TextOnHover>}
             
-           
+              
           </ImageContainer>
           
         ))}
@@ -116,18 +116,18 @@ const ImageContainer = styled.div`
   position: relative;
   display: inline;
   margin: 5px;
-  text-align: center; /* Center text on smaller screens */
+  
 `;
 
 const TextOnHover = styled.div`
   position: absolute;
-  top: -3px;
+  top: -25px;
   left: 0;
   background-color: transparent;
   color: white;
   font-family: 'Arial', sans-serif; /* Set the font family to Arial */
   font-size: 16px; /* Set the font size to 16px */
-  
+  padding: 5px;
   border-radius: 4px;
   opacity: 0;
   transition: opacity 0.3s;
@@ -137,21 +137,19 @@ const TextOnHover = styled.div`
 `;
 
 const TabbedSquareContainer = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   opacity: 1;
   border-radius: 16px;
   overflow: auto; /* To handle image overflow */
-  @media (max-width: 768px) {
-    /* Adjust styles for smaller screens */
-  }
+  border: 1px solid #333; 
+  
 `;
 
 
 const Tabs = styled.div`
   display: flex;
-  flex-wrap: wrap;
 `;
 
 const Tab = styled.button`
@@ -161,15 +159,12 @@ const Tab = styled.button`
   background: ${(props) => (props.active ? '#bababa' : '#333 ')};
   color: ${(props) => (props.active ? (props.activeColor || 'white') : '#bababa')};
   cursor: pointer;
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
 `;
 
 
 const TabContent = styled.div`
   flex: 1;
-  padding: 3%;
+  padding: 10px;
   display: flex;
   flex-wrap: nowrap; /* Prevent wrapping to the next line */
   justify-content: flex-start;
@@ -178,18 +173,15 @@ const TabContent = styled.div`
 
   gap: 10px; /* Adjust the gap between images */
   overflow-x: auto; /* Enable horizontal scrolling if needed */
-  @media (max-width: 768px) {
-    flex-direction: column; /* Stack images vertically on smaller screens */
-  }
 `;
 const imageStyle = {
     paddingTop: '50px', 
     paddingBottom: '30px',
     marginRight: '40px',
-    margin: '0 auto', // Center images horizontally
-    maxWidth: '150px',
-    height: '100px',
+    maxWidth: '100px',
+    //height: '100px',
   };
+  
   
 
 export default TabbedSquare;

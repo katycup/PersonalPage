@@ -84,7 +84,7 @@ const ResumeMobile = () => {
 
   return (
     <>
-      <div id='absatz' ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
+      <div  ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
         <style>{educationVisible ? keyframes : ''}</style>
         <SectionHeader title="Education" />
         <div style={styles.rowContainer}>
@@ -167,7 +167,7 @@ const styles = {
     paddingTop: '5px',
   },
   regTextStyle2: {
-    textAlign: 'center',
+    textAlign: 'left',
     justifyContent: 'center', // Center horizontally
     alignItems: 'center', // Center vertically
     fontFamily: 'Plus Jakarta Sans, sans-serif',
@@ -177,6 +177,7 @@ const styles = {
     color: '#bababa', // Replace with the desired text color
     fontSize: '20px',
     width: '100%',
+    marginLeft:'3%',
   },
   regTextStyle3: {
     textAlign: 'center',
