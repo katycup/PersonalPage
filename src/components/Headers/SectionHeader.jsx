@@ -4,7 +4,7 @@ import '../../App.css'
 const SectionHeader = ({ title }) => {
     return (
         <>
-        <span id='reg-text' style={styles.regTextStyle}>
+        <span id='top-text' style={{...styles.regTextStyle,marginLeft:'2%'}}>
             {title}
         </span>
         <Line /> 

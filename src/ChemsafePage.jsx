@@ -87,7 +87,7 @@ const ChemsafePage = () => {
         </div>
       </div>  
       <div style={styles.rowContainer}>
-        <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+        <div id='top-text' style={{...styles.colContainer, marginLeft:'2.5%',}}>
         <SectionHeader title="Users" />
         </div>
       </div>  
@@ -122,9 +122,14 @@ const ChemsafePage = () => {
       </div> 
       <div style={styles.rowContainer}>
         <div style={{...styles.colContainer, marginLeft:'2.5%',marginBottom:'20px'}}>
-            <span style={styles.regTextStyle}>
+        <div style={styles.rowContainer}>
+          <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+          <span id='gymText' style={styles.regTextStyle}>
                 Here is a short video how Chemsafe works and te search opions that are available 
             </span>
+          </div>
+        </div> 
+            
             
         </div>
         </div> 
@@ -171,7 +176,7 @@ const styles ={
     fontFamily: 'Plus Jakarta Sans, sans-serif',
     fontStyle: 'normal',
     fontWeight: 400,
-    fontSize: '20px',
+    //fontSize: '20px',
     color: '#bababa',
     letterSpacing: '0.1px',
     //color: '#d3d3d3', // Replace with the desired text color

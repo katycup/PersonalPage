@@ -25,23 +25,23 @@ const TopSection = () => {
 
     return(
         <>
-            <div style={{marginTop:'5%'}}>
+            <div id='topMargin'>
 
             </div>
-            <span style={{ ...styles.regTextStyle, ...flyInStyle }}>
+            <span id='top-text' style={{ ...styles.regTextStyle, ...flyInStyle, marginLeft:'-2.5%' }}>
                 Chemsafe
             </span>
-            <div style={{marginLeft:'-3%'}}>
+            <div style={{marginLeft:'-4%'}}>
                 <Line /> 
             </div>
             
             
-            <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px' }}>
+            <span id='gymText' style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200' }}>
                 Database for Safety Characteristics in Explosion Protection
                 <br/>
                 
             </span>
-            <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '24px' }}>
+            <span id='gymText' style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200' }}>
                 <br/>
                 {Chemsafe}
             </span>
@@ -56,7 +56,7 @@ const styles = {
         fontFamily: 'Plus Jakarta Sans, sans-serif',
         fontStyle: 'normal',
         fontWeight: 800,
-        fontSize: '32px',
+        //fontSize: '32px',
         letterSpacing: '0.1px',
         color: '#d3d3d3', // Replace with the desired text color
         marginLeft: '0%',

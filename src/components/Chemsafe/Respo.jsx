@@ -5,13 +5,13 @@ const Respo =({title}) =>{
 
     return (
         <>
-            <div style={{width:'70%', whiteSpace: 'pre-line',marginLeft: '2.5%', display: 'flex', marginBottom: '20px'}}>
-                <span style={regTextStyle}>
+            <div style={{width:'90%', whiteSpace: 'pre-line',marginLeft: '1%', display: 'flex', marginBottom: '20px'}}>
+                <span id='gymText' style={regTextStyle}>
                     { title }
                 </span>
                 
             </div>
-            <div  style={{marginLeft: '2.5%',}}>
+            <div  style={{marginLeft: '4%'}}>
                     <Line/>
             </div>
         </>
@@ -22,7 +22,7 @@ const regTextStyle={
     fontFamily: 'Plus Jakarta Sans, sans-serif',
     fontStyle: 'normal',
     fontWeight: 400,
-    fontSize: '20px',
+    //fontSize: '20px',
     color: '#bababa',
     letterSpacing: '0.1px',
     //color: '#d3d3d3', // Replace with the desired text color
