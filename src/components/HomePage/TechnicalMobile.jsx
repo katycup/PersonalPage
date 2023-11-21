@@ -4,7 +4,7 @@ import SectionText from './SectionText';
 import tech from '../../assets/about/techStack/tech.svg';
 import TabbedSquare from './TabbedSquare';
 
-const Technical = () => {
+const TechnicalMobile = () => {
   const containerRef = useRef(null);
   const contentRef = useRef(null);
   const [isTechnicalVisible, setIsTechnicalVisible] = useState(false);
@@ -79,8 +79,12 @@ const Technical = () => {
             <SectionText title={"Exceptional Time Management"} />
             <SectionText title={"Communication Skills"} />
           </div>
-          <div style={{ ...styles.colContainer2, paddingTop: '40px' }}>
-            <div style={squareStyle}>
+         {/*  <div style={{ ...styles.colContainer2, paddingTop: '40px' }}>
+            
+          </div> */}
+
+        </div>
+        <div style={squareStyle}>
               <div style={styles.rowContainer}>
                 <div style={{ ...styles.colContainer2, justifyContent: 'center', alignItems: 'right', width: '60%' }}>
                   Technical Stack
@@ -96,10 +100,6 @@ const Technical = () => {
                 <TabbedSquare />
               </div>
             </div>
-          </div>
-
-        </div>
-        
       </div>
     </>
   );
@@ -213,5 +213,4 @@ const styles = {
       },
       
   };
-
-  export default Technical
+  export default TechnicalMobile;

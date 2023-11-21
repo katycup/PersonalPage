@@ -29,9 +29,9 @@ const Resume = () => {
     fontWeight: 200,
     fontSize: '28px',
     letterSpacing: '0.1px',
-    marginLeft:'20px',
+   //marginLeft:'20px',
     paddingTop: '20px',
-    margin: '10px',
+    //margin: '10px',
     animation: 'flyInFromLeft 1s ease-in-out',
   };
 
@@ -84,7 +84,7 @@ const Resume = () => {
 
   return (
     <>
-      <div id='absatz' ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
+      <div ref={educationContainerRef} style={educationVisible ? { ...absatzStyle } : { ...absatzStyle, opacity: 0 }}>
         <style>{educationVisible ? keyframes : ''}</style>
         <SectionHeader title="Education" />
             

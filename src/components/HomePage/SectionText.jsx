@@ -5,7 +5,7 @@ const SectionContent = ({ title}) => {
         <>
         <div style={styles.rowContainer}>
         <div style={styles.imageContainer}>
-            <span style={regTextStyle}>
+            <span id='reg-text2' style={regTextStyle}>
                 { title }
             </span>
             
@@ -22,7 +22,6 @@ const regTextStyle={
     fontFamily: 'Plus Jakarta Sans, sans-serif',
     fontStyle: 'normal',
     fontWeight: 400,
-    fontSize: '28px',
     letterSpacing: '0.1px',
     color: '#d3d3d3', // Replace with the desired text color
     marginLeft: '0px',

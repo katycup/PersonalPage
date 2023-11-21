@@ -77,7 +77,7 @@ const TabbedSquare = () => {
   return (
     <>
    
-        <TabbedSquareContainer>
+   <TabbedSquareContainer>
         <Tabs>
             {tabs.map((tab, index) => (
             <Tab
@@ -98,7 +98,7 @@ const TabbedSquare = () => {
           >
             <img style={imageStyle} src={item.src} alt={item.alt} />
             {hoverText === item.hoverText && <TextOnHover>{item.hoverText}</TextOnHover>}
-            <FramerComponent skillLevel={item.skillLevel} />
+            
            
           </ImageContainer>
           

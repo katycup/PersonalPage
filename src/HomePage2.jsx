@@ -10,7 +10,9 @@ import Resume from './components/HomePage/ResumeDesktop';
 import ResumeMobile from './components/HomePage/ResumeMobile';
 
 import Technical from './components/HomePage/Technical';
+import TechnicalMobile from './components/HomePage/TechnicalMobile';
 import Contact from './components/HomePage/Contact';
+import ContactMobile from './components/HomePage/ContactMobile';
 
 
 const HomePage2 = () => {
@@ -151,11 +153,18 @@ const HomePage2 = () => {
       ) : (
         <Resume />
       )}
-      <div style={styles.mediaStyle}>
-      <Technical/>
-      </div>
+      {isMobile ? (
+        < TechnicalMobile/>
+      ) : (
+        <Technical/>
+      )}
+      {isMobile ? (
+        < ContactMobile/>
+      ) : (
+        <Contact/>
+      )}
       
-      <Contact/>
+     
     </div>
    
   );
@@ -189,10 +198,7 @@ const styles = {
     fontSize: '28px',
     letterSpacing: '0.1px',
     //margin: '20px', // Add margin for spacing
-    '@media (maxWidth: 768px)': {
-      fontSize: '18px', // Adjust font size for smaller screens
-      // Add more responsive styles if needed
-    },
+    
   },
   mediaStyle: {
     '@media (maxWidth: 768px)': {

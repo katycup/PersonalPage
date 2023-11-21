@@ -161,6 +161,7 @@
   }
   #heading{
     font-size: 40px;
+    margin-top: 40px;
   }
   #reg-text{
     font-size: 24px;
@@ -174,9 +175,7 @@
   #absatz{
     padding-left: 10px;
   }
-  #resume-text{
-    font-size: 12px;
-  }
+  
   #resume-text2{
     font-size: 9px;
   }
