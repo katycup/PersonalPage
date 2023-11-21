@@ -121,14 +121,12 @@ const ChemsafePage = () => {
         </div>
       </div> 
       <div style={styles.rowContainer}>
-        <div style={{...styles.colContainer, marginLeft:'2.5%',marginBottom:'20px'}}>
-        <div style={styles.rowContainer}>
-          <div style={{...styles.colContainer, marginLeft:'2.5%',}}>
+        <div style={{...styles.colContainer,marginBottom:'20px'}}>
+        
           <span id='gymText' style={styles.regTextStyle}>
                 Here is a short video how Chemsafe works and te search opions that are available 
             </span>
-          </div>
-        </div> 
+         
             
             
         </div>
