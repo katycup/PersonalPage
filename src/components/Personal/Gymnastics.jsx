@@ -5,6 +5,9 @@ import video4 from '../../assets/hobbies/flieger.mp4';
 import video5 from '../../assets/hobbies/barren.mp4';
 import video6 from '../../assets/hobbies/boden.mp4';
 import TopSection from './TopSection';
+import {
+  GymnasticsSub
+} from '../../constants/PersonalConstants';
 
 const Gymnastics = () => {
   const videoSources = [video3, video4, video5, video6];
@@ -35,7 +38,7 @@ const Gymnastics = () => {
 
   return (
     <>
-      <TopSection />
+      <TopSection title={"Gymnastics"} subtitle={GymnasticsSub} />
       <VideoPlayer2
         videoSources={videoSources}
         onPlay={customPlayLogic}

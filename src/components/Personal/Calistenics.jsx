@@ -4,6 +4,10 @@ import video1 from '../../assets/hobbies/360.mp4';
 import video2 from '../../assets/hobbies/fun.mp4';
 import video7 from '../../assets/hobbies/calicomp.mp4';
 import VideoPlayer2 from './VideoPlayer2';
+import TopSection from './TopSection';
+import {
+  CaliSub
+} from '../../constants/PersonalConstants';
 
 const Calisthenics = () => {
   const videoSources = [video1, video2, video7];
@@ -41,17 +45,8 @@ const Calisthenics = () => {
 
   return (
     <>
-      <div style={{ marginTop: '40px' }}></div>
-      <span style={{ ...styles.regTextStyle, ...flyInStyle }}>
-        Calisthenics
-      </span>
-      <div style={{ marginLeft: '-3%', marginBottom:'30px'}}>
-        <Line />
-      </div>
-
-      <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px', marginTop: '20px',marginBottom: '20px' }}>
-        During the COVID-19 pandemic, I discovered freestyle calisthenics and trained outdoors in all seasons due to gym closures. In 2021, I participated in my first international calisthenics competition and proudly secured the 3rd-place.
-      </span>
+      
+      <TopSection title={"Calisthenics"} subtitle={CaliSub} />
       <VideoPlayer2 videoSources={videoSources} onPlay={customPlayLogic} onSwitch={customSwitchLogic} />
     </>
   );

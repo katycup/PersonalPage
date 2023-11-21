@@ -151,10 +151,29 @@
   #resume-text2{
     font-size: 18px;
   }
+  #topMargin{
+    margin-top: 3%;
+  }
+  #top-text{
+    font-size: 32px;
+   
+  }
+  #gymText{
+    font-size: 24px;
+  }
 }
 @media (max-width: 768px) {
   #text-container {
     width: 80%;
+  }
+  #topMargin{
+    margin-top: 15%;
+  }
+  #top-text{
+    font-size: 24px;
+  }
+  #gymText{
+    font-size: 18px;
   }
   #image-container {
     width: 80%;

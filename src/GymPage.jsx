@@ -45,7 +45,7 @@ const styles = {
   },
   rowContainer:{
     display: 'flex',
-    justifyContent: 'left',
+    justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'left',
     flexDirection: 'row',

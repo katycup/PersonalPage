@@ -59,6 +59,7 @@ const VideoPlayer2 = ({ videoSources, onPlay, onSwitch }) => {
           width: '100%', // Set video width to 100% of the container width
           height: '100%', // Set video height to 100% of the container height
           marginTop: '30px',
+          alignContent : 'center',
         }}
         controls
         autoPlay

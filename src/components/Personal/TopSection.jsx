@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Line from '../../LineAcrossPage';
-import {
-    Gymnastics
-  } from '../../constants/PersonalConstants';
 
-const TopSection = () => {
+import '../../App.css'
+
+const TopSection = ({ title, subtitle }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -25,19 +24,19 @@ const TopSection = () => {
 
     return(
         <>
-            <div style={{marginTop:'5%'}}>
+            <div id='topMargin'>
 
             </div>
-            <span style={{ ...styles.regTextStyle, ...flyInStyle }}>
-                Gymastics
+            <span id='top-text' style={{ ...styles.regTextStyle, ...flyInStyle }}>
+              { title }
             </span>
             <div style={{marginLeft:'-3%'}}>
                 <Line /> 
             </div>
             
             
-            <span style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', fontSize: '28px' }}>
-                 {Gymnastics}
+            <span id='gymText' style={{ ...styles.regTextStyle, ...flyInStyle, fontWeight: '200', marginTop:'20px' }}>
+                 {subtitle}
                 </span>
             
         </>
@@ -50,7 +49,7 @@ const styles = {
         fontFamily: 'Plus Jakarta Sans, sans-serif',
         fontStyle: 'normal',
         fontWeight: 800,
-        fontSize: '32px',
+        //fontSize: '32px',
         letterSpacing: '0.1px',
         color: '#d3d3d3', // Replace with the desired text color
         marginLeft: '0%',
