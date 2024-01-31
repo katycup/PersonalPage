@@ -9,24 +9,24 @@ const Contact = () => {
         <>
         <SectionHeader title="Get in touch " />
         <div style={styles.rowContainer}>
-            <div style={styles.colContainer}>
+            {/* <div style={styles.colContainer}>
                 <div style={squareStyle}>
                     <img src={pin} alt="Responsive Image"  style={styles.pictureStyle}/>
                     <span> Winnipeg, Canada</span>
                 </div>
-            </div>
+            </div> */}
             <div style={styles.colContainer}>
                 <div style={squareStyle}>
                     <img src={mail} alt="Responsive Image"  style={{...styles.pictureStyle, width:"10%"}}/>
                     <span> katharina.ditler@gmx.de</span>
                 </div>
             </div>
-            <div style={styles.colContainer}>
+            {/* <div style={styles.colContainer}>
                 <div style={squareStyle}>
                     <img src={phone} alt="Responsive Image"  style={{...styles.pictureStyle, width:"10%"}}/>
                     <span>(204) 293 5844</span>
                 </div>
-            </div>
+            </div> */}
             <div style={styles.colContainer}>
                 <div style={squareStyle}>
                 <img src={linkedin} alt="Responsive Image" style={{...styles.pictureStyle, width:"7%"}} />
